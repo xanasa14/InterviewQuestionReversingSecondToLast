@@ -1,4 +1,4 @@
-lista =[0,1,2,3,4,5,6,7,8,9]
+lista =[0,1,2,3,4,5]
 e = []
 o = []
 for i in range(len(lista)):
@@ -9,7 +9,14 @@ for i in range(len(lista)):
 answer = []
 RE = e[::-1]
 RO = o[::-1]
-for i in range(len(RE)):
-    answer.append(RE[i])
-    answer.append(RO[i])
+if (len(RE) <= len(RO)):
+    for i in range(len(RE)):
+        answer.append(RE[i])
+        answer.append(RO[i])
+else:
+    for i in range(len(RE)-1):
+        answer.append(RE[i])
+        answer.append(RO[i])
+    answer.append(RE[-1])
+    
 print(answer)
